@@ -70,7 +70,7 @@ io.on('connection', socket => {
     // emit a message to all players about the player that moved
     socket.broadcast.emit('playerMoved', players[socket.id]);
   });
-
+  heroku logs --tail
   socket.on('starCollected', () => {
     if (players[socket.id].team === 'red') {
       scores.red += 10;
